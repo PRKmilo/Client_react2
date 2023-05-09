@@ -13,7 +13,7 @@ export default function Navigation() {
             <Nav>
                 <Nav.Link as={NavLink} to={'/'}>Home</Nav.Link>
                 <Nav.Link as={NavLink} to={'/signin'}>Iniciar sesion</Nav.Link>
-                <NavDropdown title="+ opciones" id="menu-dropdown">
+                <NavDropdown title="+ opciones list" id="menu-dropdown">
                     <NavDropdown.Item>Post</NavDropdown.Item>
                     <NavDropdown.Item>Cerrar Sesion</NavDropdown.Item>
                 </NavDropdown>
