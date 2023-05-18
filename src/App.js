@@ -4,6 +4,8 @@ import Navigation from "./layouts/Navigation";
 import { Container } from "react-bootstrap";
 import Signin from "./pages/Signin";
 import Posts from "./pages/Posts";
+import Home from "./pages/Home";
+import Excel from "./pages/Excel";
 import {
   BrowserRouter as Router,
   Route,Routes
@@ -20,9 +22,10 @@ function App() {
       </div>
       <Container>
         <Routes>
-          <Route exact path="/" element={<Posts />}></Route>
-          <Route exact path="/signin" element={<Signin />}>
-          </Route>
+          <Route exact path="/estudiantes" element={<Posts />}></Route>
+          <Route exact path="/signin" element={<Signin />}></Route>
+          <Route exact path="/home" element={<Home />}></Route>
+          <Route exact path="/excel" element={<Excel />}></Route>
         </Routes>
       </Container>
     </Router>
