@@ -6,6 +6,7 @@ import Signin from "./pages/Signin";
 import Posts from "./pages/Posts";
 import Home from "./pages/Home";
 import Excel from "./pages/Excel";
+import { Graduado } from "./components/Graduado";
 import {
   BrowserRouter as Router,
   Route,Routes
@@ -23,6 +24,7 @@ function App() {
       <Container>
         <Routes>
           <Route exact path="/estudiantes" element={<Posts />}></Route>
+          <Route exact path="/estudiantes/:id" element={<Graduado />}></Route>
           <Route exact path="/signin" element={<Signin />}></Route>
           <Route exact path="/home" element={<Home />}></Route>
           <Route exact path="/excel" element={<Excel />}></Route>
