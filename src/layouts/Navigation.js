@@ -41,7 +41,7 @@ export default function Navigation() {
             </Nav>
 
             <Nav>
-                <Nav.Link as={NavLink} to={'/signin'}>Iniciar sesion</Nav.Link>
+                <Nav.Link as={NavLink} to={'/signin'}>Iniciar Sesion</Nav.Link>
             </Nav>
 
         </Navbar.Collapse>
