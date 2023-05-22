@@ -5,6 +5,7 @@ import { GRADUATED_ENDPOINT } from '../helpers/endpoints';
 import { Graduado } from './Graduado';
 import { Nav,NavDropdown,Navbar } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 export default  function StudentList(){
@@ -60,11 +61,13 @@ return (
     <div className="card-list">
       {usuarios.map((card, index) => (
         <Card key={index}>
+          <Link to={`/estudiantes/${card.id}` } className="custom-link">
           <Card.Body>
             <Card.Title>{card?.name}</Card.Title>
             <Card.Text>{card?.company?.name}</Card.Text>
-            <Card.Text><Nav.Link to = {"/estudiante/"+card?.id} element={<Graduado />}></Nav.Link></Card.Text>
+            
           </Card.Body>
+          </Link>
         </Card>
       ))}
     </div>

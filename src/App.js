@@ -24,7 +24,7 @@ function App() {
       <Container>
         <Routes>
           <Route exact path="/estudiantes" element={<Posts />}></Route>
-          <Route exact path="/estudiantes/:id" element={<Graduado />}></Route>
+          <Route exact path="/estudiantes/:id" element={<Graduado  />}></Route>
           <Route exact path="/signin" element={<Signin />}></Route>
           <Route exact path="/home" element={<Home />}></Route>
           <Route exact path="/excel" element={<Excel />}></Route>
