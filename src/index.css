@@ -17,9 +17,14 @@
 }
 
 .nav{
-  position: relative;
-  right: -10px;
-
-
+  color: black;
 }
 
+.nav:visited{
+  color: black;
+}
+
+.fondo{
+
+  background-color: blueviolet;
+}
