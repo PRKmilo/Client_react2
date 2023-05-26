@@ -16,20 +16,15 @@ export default function Navigation() {
                     <NavDropdown.Item>Agendar Eventos</NavDropdown.Item>
                 </NavDropdown>
 
-                <NavDropdown title="Encuestas list" id="menu-dropdown">
-                    <NavDropdown.Item>Post</NavDropdown.Item>
+                <NavDropdown title="Encuestas" id="menu-dropdown">
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/formulario profesor'} className="nav">Formulario Profesor</Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Formulario Estudiante</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item>Cerrar Sesion</NavDropdown.Item>
-                    <a href="https://forms.gle/6WqqN5Fms55Gxx426" target="_blank">
-                    <button type="button">Encuesta Segimiento</button>
-                    </a>
-                    <a href="https://forms.gle/mpmwKFWwDtWp5uU48" target="_blank">
-                    <button type="button">Evaluación Docente</button>
-                    </a>
                 </NavDropdown>
                 <NavDropdown title="Estudiantes" id="menu_estudiantes-dropdown">
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/estudiantes'}>Ver Estudiantes</Nav.Link></NavDropdown.Item>
-                    <NavDropdown.Item>Actualizar Estudiantes</NavDropdown.Item>
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/excel'}>Subir Archivos</Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/estudiantes'}  className="nav">Ver Estudiantes</Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item>Actualizar Estudiante</NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/excel'} className="nav">Subir Archivos</Nav.Link></NavDropdown.Item>
                 </NavDropdown>
                 
 

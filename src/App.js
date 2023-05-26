@@ -7,6 +7,8 @@ import Posts from "./pages/Posts";
 import Home from "./pages/Home";
 import Excel from "./pages/Excel";
 import { Graduado } from "./components/Graduado";
+import Formulario_Prof from "./components/forms/Formulario_Prof"
+import Formulario_Seg from "./components/forms/Formulario_Seg";
 import {
   BrowserRouter as Router,
   Route,Routes
@@ -16,7 +18,7 @@ import { Provider } from "react-redux";
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store} >
       <Router>
       <div>
         <Navigation></Navigation>
@@ -28,6 +30,9 @@ function App() {
           <Route exact path="/signin" element={<Signin />}></Route>
           <Route exact path="/home" element={<Home />}></Route>
           <Route exact path="/excel" element={<Excel />}></Route>
+          <Route exact path="/formulario profesor" element={<Formulario_Prof />}></Route>
+          <Route exact path="/formulario estudiante" element={<Formulario_Seg />}></Route>
+
         </Routes>
       </Container>
     </Router>

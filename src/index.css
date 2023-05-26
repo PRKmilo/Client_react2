@@ -17,14 +17,17 @@
 }
 
 .nav{
-  position: relative;
-  right: -10px;
-
-
+  color: black;
 }
+
+.nav:visited{
+  color: black;
+}
+
 
 .custom-link {
   color: inherit;
   text-decoration: none;
 }
+
 
