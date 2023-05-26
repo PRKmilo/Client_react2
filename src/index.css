@@ -24,7 +24,10 @@
   color: black;
 }
 
-.fondo{
 
-  background-color: blueviolet;
+.custom-link {
+  color: inherit;
+  text-decoration: none;
 }
+
+
