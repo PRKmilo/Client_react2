@@ -30,6 +30,7 @@ const FormularioSeguimiento = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Aquí puedes enviar las respuestas a través de una API o realizar cualquier acción adicional
+    console.log('respuestas por medio de console')
     console.log(respuestas);
   };
 
