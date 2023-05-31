@@ -15,6 +15,8 @@ import {
 } from 'react-router-dom';
 import store from './store';
 import { Provider } from "react-redux";
+import Graduates from "./components/Graduates";
+import { Egresado } from "./components/Egresado";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route exact path="/excel" element={<Excel />}></Route>
           <Route exact path="/formulario profesor" element={<Formulario_Prof />}></Route>
           <Route exact path="/formulario estudiante" element={<Formulario_Seg />}></Route>
+          <Route exact path="/egresados" element={<Graduates />}></Route>
+          <Route exact path="/egresados/:id" element={<Egresado  />}></Route>
 
         </Routes>
       </Container>
