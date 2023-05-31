@@ -2,6 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
+
     <div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
       <div class="carousel-indicators">
         <button

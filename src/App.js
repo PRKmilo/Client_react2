@@ -6,7 +6,7 @@ import Signin from "./pages/Signin";
 import Posts from "./pages/Posts";
 import Home from "./pages/Home";
 import Excel from "./pages/Excel";
-import Events from "./pages/Events"
+import {Events} from "./pages/Events";
 import { Graduado } from "./components/Graduado";
 import Formulario_Prof from "./components/forms/Formulario_Prof"
 import Formulario_Seg from "./components/forms/Formulario_Seg";
