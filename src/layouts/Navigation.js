@@ -13,20 +13,20 @@ export default function Navigation() {
     }
   return (
     <Navbar bg='black' variant='dark' expand='lg'>
-        <Navbar.Brand as={NavLink} to={'/excel'}>Sala</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to={'/home'}>Home</Navbar.Brand>
         <Navbar.Collapse id="main-menu">
             <Nav>
-                <Nav.Link as={NavLink} to={'/home'}>Home</Nav.Link>
+
 
                 <NavDropdown title="Eventos" id="menu_eventos-dropdown">
-                    <NavDropdown.Item>Ver Eventos</NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/eventos'} className="nav">Ver Eventos</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item>Agendar Eventos</NavDropdown.Item>
                 </NavDropdown>
 
-                <NavDropdown title="Encuestas" id="menu-dropdown">
+                {valor &&(<NavDropdown title="Encuestas" id="menu-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/formulario profesor'} className="nav">Formulario Profesor</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Formulario Estudiante</Nav.Link></NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown>)}
                 {valor && (<NavDropdown title="Estudiantes" id="menu_estudiantes-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/estudiantes'}  className="nav">Ver Estudiantes</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item>Actualizar Estudiante</NavDropdown.Item>
@@ -55,8 +55,7 @@ export default function Navigation() {
            
             {username != null && (<Nav  className="navbar-right">
             <NavDropdown title={username} id="menu-dropdown">
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/formulario profesor'} className="nav">Formulario Profesor</Nav.Link></NavDropdown.Item>
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Formulario Estudiante</Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/perfil'} className="nav">Perfil</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item>Cerrar Sesion</NavDropdown.Item>
                 </NavDropdown>
                 </Nav>)}
