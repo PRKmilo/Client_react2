@@ -5,7 +5,7 @@ import Excel from '../pages/Excel'
 
 export default function Navigation() {
     const mostrar=false;
-    const username='miguel Ortiz'
+    const username=localStorage.getItem('current_user_name')
     const [valor,setValor] = useState(false);
     const cambiarValor = () =>{
         console.log('pasa cambiar valor')
@@ -33,7 +33,16 @@ export default function Navigation() {
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/excel'} className="nav">Subir Archivos</Nav.Link></NavDropdown.Item>
                 </NavDropdown>)}
 
-            
+                
+                {valor && (<NavDropdown title="Egresados" id="menu_estudiantes-dropdown">
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/egresados'}  className="nav">Ver Egresados</Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item>Actualizar Estudiante</NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/excel'} className="nav">Subir Archivos</Nav.Link></NavDropdown.Item>
+                </NavDropdown>)}
+
+                <Nav.Link as={NavLink} to={'/signin'}>Log in</Nav.Link>
+               
+ 
                 
             </Nav>
             
@@ -44,7 +53,7 @@ export default function Navigation() {
             
            
            
-            {valor && (<Nav  className="navbar-right">
+            {username != null && (<Nav  className="navbar-right">
             <NavDropdown title={username} id="menu-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/perfil'} className="nav">Perfil</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item>Cerrar Sesion</NavDropdown.Item>
