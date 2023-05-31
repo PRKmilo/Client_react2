@@ -12,7 +12,7 @@ export default function Navigation() {
         setValor(!valor);
     }
   return (
-    <Navbar bg='black' variant='dark' expand='lg'>
+    <Navbar class="navbar navbar-expand-md navbar-black fixed-top" bg='black' variant='dark' expand='lg'>
         <Navbar.Brand as={NavLink} to={'/home'}>Home</Navbar.Brand>
         <Navbar.Collapse id="main-menu">
             <Nav>
@@ -38,7 +38,7 @@ export default function Navigation() {
             </Nav>
             
             <Nav className="mr-auto">
-              <NavLink to="/" onClick={cambiarValor}>Cambiar Valor</NavLink>
+              <NavLink to="/home" onClick={cambiarValor}>Cambiar Valor</NavLink>
              </Nav>
 
             
