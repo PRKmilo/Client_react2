@@ -48,7 +48,7 @@ const FormularioSeguimiento = () => {
     <Form onSubmit={handleSubmit}>
       <Form.Group  control="Preguntas_seg">
         <br/>
-          <Card class="border-dark bg-light mb-4">
+          <Card className="border-dark bg-light mb-4">
             <h5 class="card-title">
               Agradecemos tu disposición para compartir información importante sobre tus logros y reconocimientos posteriores a tu graduación. 
               La siguiente encuesta nos ayudará a recopilar datos relevantes para reconocer tus premios y prestigios obtenidos desde que finalizaste tus estudios en nuestra universidad. 

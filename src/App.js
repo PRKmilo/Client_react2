@@ -36,7 +36,7 @@ function App() {
           <Route exact path="/excel" element={<Excel />}></Route>
           <Route exact path="/formulario profesor" element={<Formulario_Prof />}></Route>
           <Route exact path="/formulario estudiante" element={<Formulario_Seg />}></Route>
-
+          <Route exact path="/perfil" element={<Perfil />}></Route>
           <Route exact path="/egresados" element={<Graduates />}></Route>
           <Route exact path="/egresados/:id" element={<Egresado  />}></Route>
 

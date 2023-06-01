@@ -1,10 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Card, Container,Row,Col } from 'react-bootstrap'
-import { GRADUATED_ENDPOINT } from '../helpers/endpoints';
-import { Graduado } from './Graduado';
-import { Nav,NavDropdown,Navbar } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { API_URL_STUDENTS } from '../helpers/endpoints';
 import { Link } from 'react-router-dom';
 
 
@@ -13,8 +10,15 @@ export default  function StudentList(){
   const [tablaUsuarios, setTablaUsuarios]= useState([]);
   const [busqueda, setBusqueda]= useState("");
 
+  const token=localStorage.getItem('secret_token');
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+  }
+
+
   const peticionGet=async()=>{
-    await axios.get(GRADUATED_ENDPOINT)
+    await axios.get(API_URL_STUDENTS,{headers})
     .then(response=>{
       setUsuarios(response.data);
       setTablaUsuarios(response.data);
@@ -30,7 +34,7 @@ export default  function StudentList(){
   const filtrar=(terminoBusqueda)=>{
     var resultadosBusqueda=tablaUsuarios.filter((elemento)=>{
       if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-      || elemento.company.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      || elemento.lastname.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       ){
         return elemento;
       }
@@ -64,8 +68,9 @@ return (
           <Link to={`/estudiantes/${card.id}` } className="custom-link">
           <Card.Body>
             <Card.Title>{card?.name}</Card.Title>
-            <Card.Text>{card?.company?.name}</Card.Text>
-            
+            <Card.Text>{card?.lastname}</Card.Text>
+            <Card.Text>{card?.student.faculty}</Card.Text>
+            <Card.Text>{card?.student.carer}</Card.Text>
           </Card.Body>
           </Link>
         </Card>
