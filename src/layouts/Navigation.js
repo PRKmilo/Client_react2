@@ -29,7 +29,7 @@ export default function Navigation() {
     
      
   return (
-    <Navbar bg='black' variant='dark' expand='lg'>
+    <Navbar class="navbar navbar-expand-md navbar-black fixed-top" bg='black' variant='dark' expand='lg'>
         <Navbar.Brand as={NavLink} to={'/home'}>Home</Navbar.Brand>
         <Navbar.Collapse id="main-menu">
             <Nav>
@@ -63,7 +63,9 @@ export default function Navigation() {
                 
             </Nav>
             
+
             
+
 
             
            

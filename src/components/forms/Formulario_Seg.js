@@ -48,102 +48,105 @@ const FormularioSeguimiento = () => {
     <Form onSubmit={handleSubmit}>
       <Form.Group  control="Preguntas_seg">
         <br/>
-          <Card className="border-dark bg-light mb-4">
-            <h5 class="card-title">
-              Agradecemos tu disposición para compartir información importante sobre tus logros y reconocimientos posteriores a tu graduación. 
-              La siguiente encuesta nos ayudará a recopilar datos relevantes para reconocer tus premios y prestigios obtenidos desde que finalizaste tus estudios en nuestra universidad. 
-              Tu participación es fundamental para mantener actualizada nuestra base de datos y resaltar tus logros.
-            </h5>
-            
-            <br/>
-            
-            <div>
-              <input
-                type="text"
-                id="nombreEstudiante"
-                name="nombreEstudiante"
-                class="col-sm-5" 
-                placeholder="Nombre Completo"
-                value={respuestas.nombreEstudiante}
-                onChange={handleChange}
-              />
-            </div>
-            
-            <br/>
-            
-            <div>
-              <input
-                type="text"
-                id="anioGraduacion"
-                name="anioGraduacion"
-                class="col-sm-5" 
-                placeholder="Año de graduación."
-                value={respuestas.anioGraduacion}
-                onChange={handleChange}
-              />
-            </div>
-            
-            <br/>
-            
-            <div>
-              <input
-                type="text"
-                id="correoPersonal"
-                name="correoPersonal"
-                class="col-sm-5" 
-                placeholder="Correo Personal."
-                value={respuestas.correoPersonal}
-                onChange={handleChange}
-              />
-            </div>
-            
-            <br/>
-            
-            <div>
-              <input
-                type="text"
-                id="numeroTelefono"
-                name="numeroTelefono"
-                class="col-sm-5" 
-                placeholder="Número de teléfono."
-                value={respuestas.numeroTelefono}
-                onChange={handleChange}
-              />
-            </div>
-            
-            <br/>
-            
-            <div>
-              <input
-                type="text"
-                id="redesSociales"
-                name="redesSociales"
-                class="col-sm-5" 
-                placeholder="Redes sociales (opcional)."
-                value={respuestas.redesSociales}
-                onChange={handleChange}
-              />
-            </div>
-            
-            <br/>
-            
-            <div>
-              <select
-                id="carreraPrograma"
-                name="carreraPrograma"
-                value={respuestas.carreraPrograma}
-                onChange={handleChange}
-              >
-                <option value="">Carrera o programa de estudios.</option>
-                <option value="1">Carrera 1</option>
-                <option value="2">Carrera 2</option>
-                <option value="3">Carrera 3</option>
-                <option value="4">Carrera 4</option>
-                <option value="5">Carrera 5</option>
-              </select>
-            </div>
-            
-            <br/>
+
+            <Card class="border-dark bg-light mb-4">
+              <h5 class="card-title">
+                Agradecemos tu disposición para compartir información importante sobre tus logros y reconocimientos posteriores a tu graduación. 
+                La siguiente encuesta nos ayudará a recopilar datos relevantes para reconocer tus premios y prestigios obtenidos desde que finalizaste tus estudios en nuestra universidad. 
+                Tu participación es fundamental para mantener actualizada nuestra base de datos y resaltar tus logros.
+              </h5>
+              
+              <br/>
+              
+              <div>
+                <input
+                  type="text"
+                  id="nombreEstudiante"
+                  name="nombreEstudiante"
+                  class="col-sm-5" 
+                  placeholder="Nombre Completo"
+                  value={respuestas.nombreEstudiante}
+                  onChange={handleChange}
+                />
+              </div>
+              
+              <br/>
+              
+              <div>
+                <input
+                  type="text"
+                  id="anioGraduacion"
+                  name="anioGraduacion"
+                  class="col-sm-5" 
+                  placeholder="Año de graduación."
+                  value={respuestas.anioGraduacion}
+                  onChange={handleChange}
+                />
+              </div>
+              
+              <br/>
+              
+              <div>
+                <input
+                  type="text"
+                  id="correoPersonal"
+                  name="correoPersonal"
+                  class="col-sm-5" 
+                  placeholder="Correo Personal."
+                  value={respuestas.correoPersonal}
+                  onChange={handleChange}
+                />
+              </div>
+              
+              <br/>
+              
+              <div>
+                <input
+                  type="text"
+                  id="numeroTelefono"
+                  name="numeroTelefono"
+                  class="col-sm-5" 
+                  placeholder="Número de teléfono."
+                  value={respuestas.numeroTelefono}
+                  onChange={handleChange}
+                />
+              </div>
+              
+              <br/>
+              
+              <div>
+                <input
+                  type="text"
+                  id="redesSociales"
+                  name="redesSociales"
+                  class="col-sm-5" 
+                  placeholder="Redes sociales (opcional)."
+                  value={respuestas.redesSociales}
+                  onChange={handleChange}
+                />
+              </div>
+              
+              <br/>
+              
+              <div>
+                <select
+                  id="carreraPrograma"
+                  name="carreraPrograma"
+                  value={respuestas.carreraPrograma}
+                  onChange={handleChange}
+                >
+                  <option value="">Carrera o programa de estudios.</option>
+                  <option value="1">Carrera 1</option>
+                  <option value="2">Carrera 2</option>
+                  <option value="3">Carrera 3</option>
+                  <option value="4">Carrera 4</option>
+                  <option value="5">Carrera 5</option>
+                </select>
+              </div>
+              
+              <br/>
+
+         
           </Card>
           <Card className="border-dark bg-light mb-4">
             <br/>

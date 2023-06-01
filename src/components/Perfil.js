@@ -36,8 +36,8 @@ export function Perfil  ({id_perfil})  {
         <> 
 
             <div>
-            
-                <Card className="mb-4">
+                <br/>
+                <Card className="border-dark bg-light mb-4">
                     <CardGroup className="text-center">
                     <CardImg
                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
@@ -58,7 +58,7 @@ export function Perfil  ({id_perfil})  {
                 </Card>
             </div>
             <div>
-                <Card className="mb-4">
+                <Card className="border-dark bg-light mb-4">
                 <CardGroup>
                     <Row>
                     <Col sm="9">
@@ -121,7 +121,7 @@ export function Perfil  ({id_perfil})  {
                 </Card>
             </div>
             <div class = "form-outline w-100">
-                <Card>
+                <Card className="border-dark bg-light mb-4">
                     <CardGroup>
                         <Col sm = "10">
                             <h1>Logros:</h1>
