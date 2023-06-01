@@ -1,5 +1,5 @@
 import React from 'react'
-import { GRADUATED_ENDPOINT } from '../helpers/endpoints'
+import { API_USERS } from '../helpers/endpoints'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import {
@@ -16,13 +16,18 @@ import {
 export function Perfil  ({id_perfil})  {
     const [perfil, setPerfil] = React.useState([])
     console.log(useParams('id'))
-    const{id} = useParams()
+    const id = localStorage.getItem('current_user_id')
     useEffect(() => {
         obtenerDatos()
     },[])
 
+    const token=localStorage.getItem('secret_token');
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+  }
     const obtenerDatos = async () =>{
-        const data = await fetch(GRADUATED_ENDPOINT+'/'+id)
+        const data = await fetch(API_USERS+'/'+id,{headers})
         const perf = await data.json()
         setPerfil(perf)
     }
@@ -80,7 +85,7 @@ export function Perfil  ({id_perfil})  {
                         <Card.Text>Phone</Card.Text>
                     </Col>
                     <Col sm="9">
-                        <Card.Text className="text-muted">{perfil.phone}</Card.Text>
+                        <Card.Text className="text-muted">{perfil.telefono}</Card.Text>
                     </Col>
                     </Row>
                     <hr />
@@ -90,7 +95,7 @@ export function Perfil  ({id_perfil})  {
                         <Card.Text>Mobile</Card.Text>
                     </Col>
                     <Col sm="9">
-                        <Card.Text className="text-muted">{perfil.phone}</Card.Text>
+                        <Card.Text className="text-muted">{perfil.telefono}</Card.Text>
                     </Col>
                     </Row>
                     <hr />
@@ -100,7 +105,7 @@ export function Perfil  ({id_perfil})  {
                         <Card.Text>Address</Card.Text>
                     </Col>
                     <Col sm="9">
-                        <Card.Text className="text-muted">{perfil.address?.street}, {perfil.address?.city}</Card.Text>
+                        <Card.Text className="text-muted">{perfil.direccion}, {perfil.address?.city}</Card.Text>
                     </Col>
                     </Row>
                     <br/>

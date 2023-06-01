@@ -1,5 +1,6 @@
 const API_URL = "http://localhost:3000";
-const  API_URL_GRADUATED = "https://jsonplaceholder.typicode.com/users";
+export const API_USERS=API_URL+"/users";
+export const  API_URL_STUDENTS = API_URL+"/students";
 export const LOGIN_ENDPOINT = API_URL + "/auth/login";
-export const   GRADUATED_ENDPOINT=API_URL_GRADUATED;
+export const   GRADUATED_ENDPOINT="";
 export const EGRESADO_ENDPONINT=API_URL+"/graduates"
