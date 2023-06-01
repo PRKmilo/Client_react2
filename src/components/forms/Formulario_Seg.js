@@ -48,6 +48,7 @@ const FormularioSeguimiento = () => {
     <Form onSubmit={handleSubmit}>
       <Form.Group  control="Preguntas_seg">
         <br/>
+
             <Card class="border-dark bg-light mb-4">
               <h5 class="card-title">
                 Agradecemos tu disposición para compartir información importante sobre tus logros y reconocimientos posteriores a tu graduación. 
@@ -144,6 +145,8 @@ const FormularioSeguimiento = () => {
               </div>
               
               <br/>
+
+         
           </Card>
           <Card className="border-dark bg-light mb-4">
             <br/>

@@ -9,6 +9,7 @@ export default function SignInForm({errors, onSubmitCallback}) {
     const submitForm = (e) => {
         e.preventDefault();
         onSubmitCallback({email,password})
+        
     } 
   return (
     <div>

@@ -1,13 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Card, Container,Row,Col } from 'react-bootstrap'
-import { API_URL_STUDENTS } from '../helpers/endpoints';
+import { EGRESADO_ENDPONINT } from '../helpers/endpoints';
+import { Graduado } from './Graduado';
+import { Nav,NavDropdown,Navbar } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
 
-export default  function StudentList(){
-  const [usuarios, setUsuarios]= useState([]);
-  const [tablaUsuarios, setTablaUsuarios]= useState([]);
+export default  function Graduates(){
+  const [graduates, setGraduates]= useState([]);
+  const [tablaGraduates, setTablaGraduates]= useState([]);
   const [busqueda, setBusqueda]= useState("");
 
   const token=localStorage.getItem('secret_token');
@@ -15,13 +18,13 @@ export default  function StudentList(){
   const headers = {
     Authorization: `Bearer ${token}`
   }
-
-
+  console.log("esta es la token")
+  console.log(token)
   const peticionGet=async()=>{
-    await axios.get(API_URL_STUDENTS,{headers})
+    await axios.get(EGRESADO_ENDPONINT,{headers})
     .then(response=>{
-      setUsuarios(response.data);
-      setTablaUsuarios(response.data);
+      setGraduates(response.data);
+      setTablaGraduates(response.data);
     }).catch(error=>{
       console.log(error);
     })
@@ -32,14 +35,14 @@ export default  function StudentList(){
     filtrar(e.target.value);
   }
   const filtrar=(terminoBusqueda)=>{
-    var resultadosBusqueda=tablaUsuarios.filter((elemento)=>{
+    var resultadosBusqueda=tablaGraduates.filter((elemento)=>{
       if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       || elemento.lastname.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       ){
         return elemento;
       }
     });
-    setUsuarios(resultadosBusqueda);
+    setGraduates(resultadosBusqueda);
   }
 
   useEffect(()=>{
@@ -47,7 +50,8 @@ export default  function StudentList(){
     },[])
 
  
-    console.log(usuarios);
+    console.log(graduates);
+    console.log(graduates.name)
 
 return (
     <div>
@@ -63,14 +67,14 @@ return (
         </button>
         </div>
     <div className="card-list">
-      {usuarios.map((card, index) => (
+      {graduates.map((card, index) => (
         <Card key={index}>
-          <Link to={`/estudiantes/${card.id}` } className="custom-link">
+          <Link to={`/egresados/${card.id}` } className="custom-link">
           <Card.Body>
             <Card.Title>{card?.name}</Card.Title>
             <Card.Text>{card?.lastname}</Card.Text>
-            <Card.Text>{card?.student.faculty}</Card.Text>
-            <Card.Text>{card?.student.carer}</Card.Text>
+            <Card.Text>{card?.graduate?.faculty}</Card.Text>
+            
           </Card.Body>
           </Link>
         </Card>

@@ -48,6 +48,7 @@ export default function Excel() {
       const worksheet=workbook.Sheets[worksheetName];
       const data = XLSX.utils.sheet_to_json(worksheet);
       setExcelData(data);
+      console.log(excelData)
     }
     else{
       setExcelData(null);
