@@ -5,7 +5,11 @@ module.exports = function(app) {
       '/students',
       createProxyMiddleware({
         target: 'http://161.35.9.51',
+        
         changeOrigin: true,
+        headers: {
+            Host: '161.35.9.51',  // Replace with the IP address of your Rails app
+          },
       })
     );
 
@@ -14,6 +18,9 @@ module.exports = function(app) {
         createProxyMiddleware({
           target: 'http://161.35.9.51',
           changeOrigin: true,
+          headers: {
+            Host: '161.35.9.51',  // Replace with the IP address of your Rails app
+          },
         })
       );
 
@@ -22,6 +29,9 @@ module.exports = function(app) {
         createProxyMiddleware({
           target: 'http://161.35.9.51/',
           changeOrigin: true,
+          headers: {
+            Host: '161.35.9.51',  // Replace with the IP address of your Rails app
+          },
         })
       );
 
@@ -30,6 +40,9 @@ module.exports = function(app) {
         createProxyMiddleware({
           target: 'http://161.35.9.51',
           changeOrigin: true,
+          headers: {
+            Host: '161.35.9.51',  // Replace with the IP address of your Rails app
+          },
         })
       );
 
@@ -38,6 +51,9 @@ module.exports = function(app) {
         createProxyMiddleware({
           target: 'http://161.35.9.51',
           changeOrigin: true,
+          headers: {
+            Host: '161.35.9.51',  // Replace with the IP address of your Rails app
+          },
         })
       );
 
@@ -46,6 +62,9 @@ module.exports = function(app) {
         createProxyMiddleware({
           target: 'http://161.35.9.51',
           changeOrigin: true,
+          headers: {
+            Host: '161.35.9.51',  // Replace with the IP address of your Rails app
+          },
         })
       );
 
