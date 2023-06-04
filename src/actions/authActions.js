@@ -25,7 +25,7 @@ export const loginUser =  (userData) => dispatch => {
             console.log('pasando por action 15')
 
             resolve(response)
-            window.location.href = 'http://localhost:3001/estudiantes';
+            window.location.href = 'http://localhost:3000/estudiantes';
         }).catch(error => {
             alert('contraseña o correo incorrectos')
             console.log('pasando por action')
