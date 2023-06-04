@@ -27,6 +27,7 @@ export const loginUser =  (userData) => dispatch => {
 
             resolve(response)
             window.location.href = 'https://jellyfish-app-ru38j.ondigitalocean.app/estudiantes';
+            //window.location.href = 'http://localhost:3001/estudiantes'
         }).catch(error => {
             alert('contraseña o correo incorrectos')
             console.log('pasando por action')

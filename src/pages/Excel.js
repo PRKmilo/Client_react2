@@ -59,7 +59,8 @@ export default function Excel() {
        console.log(individualExcelData.Primer_Nombre)        
       ))
       console.log(API_EXCEL_EGRESADOS)
-      console.log(data.Primer_Nombre+ 'Esta es la data del excel')
+      console.log(data)
+      console.log(excelData)
 
       axios.post(API_EXCEL_EGRESADOS,data,{headers}).then(response => {
 
