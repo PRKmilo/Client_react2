@@ -23,10 +23,10 @@ const Home = () => {
             <div>
               <h1 className="text">ForestTracker</h1>
             
-              <p className="tipo_letra">
+              <p className="tipo_letra" >
               ForestTracker, desarrollado por Forest Solutions,
-              es una plataforma integral del seguimiento de estudiantes principalmente, creada en colaboración con la prestigiosa Universidad del Bosque.
-              Esta plataforma innovadora tiene como objetivo facilitar la supervisión y el progreso académico de los estudiantes en un entorno virtual seguro y eficiente.
+              es una plataforma integral del seguimiento de estudiantes, creada en colaboración con la prestigiosa Universidad del Bosque.
+              Esta plataforma innovadora tiene como objetivo facilitar la supervisión y el progreso académico de los estudiantes en un entorno virtual, seguro y eficiente.
               </p>
             </div>
           </Card>

@@ -43,11 +43,11 @@ export function Perfil  ({id_perfil})  {
                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                         alt="avatar"
                         className="rounded-circle"
-                        style={{ width: '150px' }}
+                        style={{ width: '200px' }}
                         fluid
                     />
-                    <Col sm = "2">
-                    <Card.Text className="text-muted mb-1"><h1>{perfil.name}</h1></Card.Text>
+                    <Col sm = "3">
+                    <Card.Text className="text-muted mb-2"><h1>{perfil.name}</h1></Card.Text>
                     </Col>
                     <br/>
                     <Col sm = "8">
@@ -62,7 +62,7 @@ export function Perfil  ({id_perfil})  {
                 <CardGroup>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Full Name</Card.Text>
+                        <Card.Text>Nombre Completo</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{perfil.name}</Card.Text>
@@ -82,7 +82,7 @@ export function Perfil  ({id_perfil})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Phone</Card.Text>
+                        <Card.Text>Teléfono Fijo</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{perfil.telefono}</Card.Text>
@@ -92,7 +92,7 @@ export function Perfil  ({id_perfil})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Mobile</Card.Text>
+                        <Card.Text>Número Celular</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{perfil.telefono}</Card.Text>
@@ -102,7 +102,7 @@ export function Perfil  ({id_perfil})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Address</Card.Text>
+                        <Card.Text>Dirección</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{perfil.direccion}, {perfil.address?.city}</Card.Text>
@@ -111,7 +111,7 @@ export function Perfil  ({id_perfil})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Current Company</Card.Text>
+                        <Card.Text>Compañía Actual</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{perfil.company?.name}</Card.Text>

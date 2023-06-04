@@ -61,7 +61,7 @@ export function Graduado  ({id_graduado})  {
                 <CardGroup>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Full Name</Card.Text>
+                        <Card.Text>Nombre Completo</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{graduado.name}</Card.Text>
@@ -81,7 +81,7 @@ export function Graduado  ({id_graduado})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Phone</Card.Text>
+                        <Card.Text>Teléfono Fijo</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{graduado.telofono}</Card.Text>
@@ -91,7 +91,7 @@ export function Graduado  ({id_graduado})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Mobile</Card.Text>
+                        <Card.Text>Número Celular</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{graduado.celular}</Card.Text>
@@ -101,7 +101,7 @@ export function Graduado  ({id_graduado})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>Address</Card.Text>
+                        <Card.Text>Dirección</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{graduado.direccion}, {graduado.address?.city}</Card.Text>
@@ -110,7 +110,7 @@ export function Graduado  ({id_graduado})  {
                     <br/>
                     <Row>
                     <Col sm="9">
-                        <Card.Text>facultad</Card.Text>
+                        <Card.Text>Facultad</Card.Text>
                     </Col>
                     <Col sm="9">
                         <Card.Text className="text-muted">{graduado.student?.faculty}</Card.Text>

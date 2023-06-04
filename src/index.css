@@ -54,3 +54,11 @@ margin-bottom: 4px;
   color: black;
   text-align: justify;
 }
+
+.letra_perfil{
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: 50;
+  color: black;
+  text-align: justify;
+}
