@@ -19,6 +19,7 @@ import store from './store';
 import { Provider } from "react-redux";
 import Graduates from "./components/Graduates";
 import { Egresado } from "./components/Egresado";
+import FormularioEgresado from "./components/forms/Formulario_egresado";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/formulario estudiante" element={<Formulario_Seg />}></Route>
           <Route exact path="/perfil" element={<Perfil />}></Route>
           <Route exact path="/egresados" element={<Graduates />}></Route>
+          <Route exact path="/egresados_form" element={<FormularioEgresado />}></Route>
           <Route exact path="/egresados/:id" element={<Egresado  />}></Route>
 
 

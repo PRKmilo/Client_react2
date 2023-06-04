@@ -40,7 +40,7 @@ export default function Navigation() {
                     <NavDropdown.Item>Agendar Eventos</NavDropdown.Item>
                 </NavDropdown>
 
-                {valor != false &&(<NavDropdown title="Encuestas" id="menu-dropdown">
+                {valor != false &&(<NavDropdown title="Formularios" id="menu-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/formulario profesor'} className="nav">Formulario Profesor</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Formulario Estudiante</Nav.Link></NavDropdown.Item>
                 </NavDropdown>)}
@@ -53,7 +53,7 @@ export default function Navigation() {
                 
                 {valor != false && (<NavDropdown title="Egresados" id="menu_estudiantes-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/egresados'}  className="nav">Ver Egresados</Nav.Link></NavDropdown.Item>
-                    <NavDropdown.Item>Actualizar Estudiante</NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/egresados_form'}  className="nav">Registrar un egresado</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/excel'} className="nav">Subir Archivos</Nav.Link></NavDropdown.Item>
                 </NavDropdown>)}
 
