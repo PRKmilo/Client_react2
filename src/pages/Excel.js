@@ -62,12 +62,12 @@ export default function Excel() {
       console.log(data)
       console.log(excelData)
 
-      axios.post(API_EXCEL_EGRESADOS,excelData,{headers}).then(response => {
+      axios.post(API_EXCEL_EGRESADOS,data,{headers}).then(response => {
 
         console.log(response)
      }).catch(error => {
          alert('Se leyeron los datos')
-         console.log('pasando por action')
+         console.log('pasando por action')  
          
      })
     }
