@@ -1,4 +1,4 @@
-const API_URL = "161.35.9.51";
+const API_URL = "http://161.35.9.51";
 export const API_USERS=API_URL+"/users";
 export const API_EXCEL_EGRESADOS= API_URL+"/excel";
 export const  API_URL_STUDENTS = API_URL+"/students";
