@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import * as XLSX from 'xlsx'
 import { Data } from '../components/Data';
+import axios from 'axios';
+import { API_EXCEL_EGRESADOS } from '../helpers/endpoints';
 
 export default function Excel() {
   
@@ -39,6 +41,11 @@ export default function Excel() {
     }
   }
 
+  const token=localStorage.getItem('secret_token');
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+  }
   // submit function
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -48,7 +55,20 @@ export default function Excel() {
       const worksheet=workbook.Sheets[worksheetName];
       const data = XLSX.utils.sheet_to_json(worksheet);
       setExcelData(data);
-      console.log(excelData)
+      data.map ((individualExcelData)=>(
+       console.log(individualExcelData.Primer_Nombre)        
+      ))
+      console.log(API_EXCEL_EGRESADOS)
+      console.log(data.Primer_Nombre+ 'Esta es la data del excel')
+
+      axios.post(API_EXCEL_EGRESADOS,data,{headers}).then(response => {
+
+        console.log(response)
+     }).catch(error => {
+         alert(error)
+         console.log('pasando por action')
+         
+     })
     }
     else{
       setExcelData(null);
@@ -91,7 +111,11 @@ export default function Excel() {
                   <th scope='col'>Carrera</th>
                   <th scope='col'>Año de Graduación</th>
                   <th scope='col'>Edad</th>
-                  <th scope='col'>Logro mas Importante</th>                  
+                  <th scope='col'>Celular</th>
+                  <th scope='col'>Telefono</th>
+                  <th scope='col'>Titulo despues universidad</th>
+                  <th scope='col'>Vida personal</th>
+                  <th scope='col'>Trabajos</th>
                 </tr>
               </thead>
               <tbody>
