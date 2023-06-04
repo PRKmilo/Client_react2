@@ -45,11 +45,6 @@ export default function Navigation() {
             <Nav>
 
 
-                <NavDropdown title="Eventos" id="menu_eventos-dropdown">
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/eventos'} className="nav">Ver Eventos</Nav.Link></NavDropdown.Item>
-                    <NavDropdown.Item>Agendar Eventos</NavDropdown.Item>
-                </NavDropdown>
-
                 {valor != false &&(<NavDropdown title="Formularios" id="menu-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/formulario profesor'} className="nav">Formulario Profesor</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Formulario Estudiante</Nav.Link></NavDropdown.Item>
@@ -80,7 +75,7 @@ export default function Navigation() {
             
            
            
-            {valor != false && (<Nav  className="navbar-right">
+            {valor != false && (<Nav  className="navbar-right" style={{ position: 'absolute', left: '1750px'}}>
             <NavDropdown title={username} id="menu-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/perfil'} className="nav">Perfil</Nav.Link></NavDropdown.Item>
                     <NavDropdown.Item onClick={handleLogout}>Cerrar Sesion</NavDropdown.Item>
