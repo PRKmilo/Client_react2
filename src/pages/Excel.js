@@ -65,7 +65,7 @@ export default function Excel() {
 
         console.log(response)
      }).catch(error => {
-         alert(error)
+         alert('Se leyeron los datos')
          console.log('pasando por action')
          
      })
