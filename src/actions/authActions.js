@@ -26,7 +26,7 @@ export const loginUser =  (userData) => dispatch => {
             console.log('pasando por action 15')
 
             resolve(response)
-            window.location.href = 'http://localhost:3000/estudiantes';
+            window.location.href = 'https://lobster-app-lclic.ondigitalocean.app/estudiantes';
         }).catch(error => {
             alert('contraseña o correo incorrectos')
             console.log('pasando por action')
