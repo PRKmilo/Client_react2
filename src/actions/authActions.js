@@ -20,6 +20,7 @@ export const loginUser =  (userData) => dispatch => {
             localStorage.setItem('current_user_email',response.data.current_user.email)
             localStorage.setItem('current_user_id',response.data.current_user.id)
             localStorage.setItem('secret_token',response.data.token)
+            localStorage.setItem('current_user_cedula',response.data.current_user.cc)
             console.log('localstorage')
             console.log(localStorage.getItem('current_user_name'))
             console.log('pasando por action 15')

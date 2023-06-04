@@ -29,8 +29,18 @@ export default function Navigation() {
     
      
   return (
-    <Navbar class="navbar navbar-expand-md navbar-black fixed-top" bg='black' variant='dark' expand='lg'>
-        <Navbar.Brand as={NavLink} to={'/home'}>Home</Navbar.Brand>
+    <Navbar class="navbar" bg='success' variant='dark' expand='lg'>
+       <Navbar.Brand as={NavLink} to={'/home'}>
+            <img
+                src = "https://www.unbosque.edu.co/sites/default/files/logo.png" 
+                alt='Logo'
+                background-size = "cover"
+                background-repeat = "no-repeat"
+                background-position = "left"
+                width = "200px"
+                height = "50px"
+                border = "none"
+            /></Navbar.Brand>
         <Navbar.Collapse id="main-menu">
             <Nav>
 

@@ -7,26 +7,33 @@ import {
   CardGroup,
 
 } from 'react-bootstrap';
+import { API_UPDATE_EGRESADOS } from '../../helpers/endpoints';
+import axios from 'axios';
 
 
 const FormularioSeguimiento = () => {
   const [respuestas, setRespuestas] = useState({
 
-    nombreEstudiante: '',
-    anioGraduacion: '',
+    trabajotitulo: '',
+    trabajodescripcion: '',
     carreraPrograma: '',
-    correoPersonal: '',
-    numeroTelefono: '',
-    redesSociales: '',
+    estadoCivil: '',
+    nivelEducativo: '',
+    trabajocargo: '',
+    trabajocompany: '',
+    trabajofecha: '',
     premio: '',
     anioPremio: '',
     entidadPremio: '',
     descripcionPremio: '',
-    premioLaboral: '',
-    nombrePreLaboral: '',
-    anioPreLaboral: '',
+    acontecimientotitulo: '',
+    descriocionAcontecimiento: '',
+    fechaAcontecimiento: '',
     entidadPreLaboral: '',
-    descripcionPreLaboral: ''
+    ubicacionpremio: '',
+    trabajoubicacion: '',
+    descripcionPreLaboral: '',
+    cc:''
   });
 
   const handleChange = (event) => {
@@ -35,21 +42,59 @@ const FormularioSeguimiento = () => {
     setRespuestas((prevState) => ({ ...prevState, [name]: newValue }));
   };
 
+  // const [error, setError] = useState('');
   const handleSubmit = (event) => {
+    const token=localStorage.getItem('secret_token');
+
+    const headers = {
+      Authorization: `Bearer ${token}`
+    }
     event.preventDefault();
     // Aquí puedes enviar las respuestas a través de una API o realizar cualquier acción adicional
     console.log('respuestas por medio de console')
     console.log(respuestas);
+    respuestas.cc=localStorage.getItem('current_user_cedula')
+
+    axios.post(API_UPDATE_EGRESADOS,respuestas,{headers}).then(response => {
+
+      console.log(response)
+   }).catch(error => {
+       alert(error)
+       console.log('pasando por action')
+       
+   })
+
   };
 
-
+  // if (
+    
+  //   respuestas.nombreEstudiante === '' || 
+  //   respuestas.anioGraduacion === '' || 
+  //   respuestas.carreraPrograma === '' ||    
+  //   respuestas.estadoCivil === '' ||
+  //   respuestas.nivelEducativo === '' ||
+  //   respuestas.correoPersonal === '' ||
+  //   respuestas.numeroTelefono ==='' ||
+  //   respuestas.redesSociales === ''||
+  //   respuestas.premio === '' ||
+  //   respuestas.anioPremio === '' ||
+  //   respuestas.entidadPremio === '' ||
+  //   respuestas.descripcionPremio === '' ||
+  //   respuestas.premioLaboral === '' ||
+  //   respuestas.nombrePreLaboral ==='' ||
+  //   respuestas.anioPreLaboral === '' ||
+  //   respuestas.entidadPreLaboral === '' ||
+  //   respuestas.descripcionPreLaboral === '' ) {
+  //   setError('Por favor, complete todos los campos');
+  //   return;
+  // }
   
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group  control="Preguntas_seg">
         <br/>
-
-            <Card class="border-dark bg-light mb-4">
+            <Card className="border-dark bg-light mb-4">
+              <br/>
               <h5 class="card-title">
                 Agradecemos tu disposición para compartir información importante sobre tus logros y reconocimientos posteriores a tu graduación. 
                 La siguiente encuesta nos ayudará a recopilar datos relevantes para reconocer tus premios y prestigios obtenidos desde que finalizaste tus estudios en nuestra universidad. 
@@ -58,95 +103,108 @@ const FormularioSeguimiento = () => {
               
               <br/>
               
-              <div>
-                <input
-                  type="text"
-                  id="nombreEstudiante"
-                  name="nombreEstudiante"
-                  class="col-sm-5" 
-                  placeholder="Nombre Completo"
-                  value={respuestas.nombreEstudiante}
-                  onChange={handleChange}
-                />
-              </div>
+              <br/>
+            <h5 class="card-title">Por favor, dinos si has tenido un trabajo del cual quiera contarnos.Si es asi dinos el nombre</h5>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="trabajotitulo"
+              name="trabajotitulo"
+              class="col-sm-5" 
+              placeholder="Nombre del premio o reconocimiento."
+              value={respuestas.trabajotitulo }
+              onChange={handleChange}
+            />
+            </div>
+            <br/>
+              
+              <br/>
+              <br/>
+            <h5 class="card-title">Nos puedes compartir un poco una breve descripcion de lo que haces en un trabajo</h5>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="trabajodescripcion"
+              name="trabajodescripcion"
+              class="col-sm-5" 
+              placeholder="Nombre del premio o reconocimiento."
+              value={respuestas.trabajodescripcion}
+              onChange={handleChange}
+            />
+            </div>
+            <br/>
+              
               
               <br/>
               
-              <div>
-                <input
-                  type="text"
-                  id="anioGraduacion"
-                  name="anioGraduacion"
-                  class="col-sm-5" 
-                  placeholder="Año de graduación."
-                  value={respuestas.anioGraduacion}
-                  onChange={handleChange}
-                />
-              </div>
+              <br/>
+            <h5 class="card-title">Nos puedes decir el cargo de tu trabajo</h5>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="trabajocargo"
+              name="trabajocargo"
+              class="col-sm-5" 
+              placeholder="Nombre del premio o reconocimiento."
+              value={respuestas.trabajocargo}
+              onChange={handleChange}
+            />
+            </div>
+            <br/>
               
               <br/>
               
-              <div>
-                <input
-                  type="text"
-                  id="correoPersonal"
-                  name="correoPersonal"
-                  class="col-sm-5" 
-                  placeholder="Correo Personal."
-                  value={respuestas.correoPersonal}
-                  onChange={handleChange}
-                />
-              </div>
+              <br/>
+            <h5 class="card-title">Nos puedes decir el nombre  de la compañia</h5>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="trabajocompany"
+              name="trabajocompany"
+              class="col-sm-5" 
+              placeholder="Nombre del premio o reconocimiento."
+              value={respuestas.trabajocompany}
+              onChange={handleChange}
+            />
+            </div>
+            <br/>
+               <h5 class="card-title">En que pais se encuentra ubicada</h5>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="trabajoubicacion"
+              name="trabajoubicacion"
+              class="col-sm-5" 
+              placeholder="Nombre del premio o reconocimiento."
+              value={respuestas.trabajoubicacion}
+              onChange={handleChange}
+            />
+            </div>
+            <br/>
+              <br/>
+              
+              <br/>
+            <h5 class="card-title">Nos puedes escribir la fecha en donde consegiste el trabajo</h5>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="trabajofecha"
+              name="trabajofecha"
+              class="col-sm-5" 
+              placeholder="Nombre del premio o reconocimiento."
+              value={respuestas.trabajofecha}
+              onChange={handleChange}
+            />
+            </div>
               
               <br/>
               
-              <div>
-                <input
-                  type="text"
-                  id="numeroTelefono"
-                  name="numeroTelefono"
-                  class="col-sm-5" 
-                  placeholder="Número de teléfono."
-                  value={respuestas.numeroTelefono}
-                  onChange={handleChange}
-                />
-              </div>
-              
-              <br/>
-              
-              <div>
-                <input
-                  type="text"
-                  id="redesSociales"
-                  name="redesSociales"
-                  class="col-sm-5" 
-                  placeholder="Redes sociales (opcional)."
-                  value={respuestas.redesSociales}
-                  onChange={handleChange}
-                />
-              </div>
-              
-              <br/>
-              
-              <div>
-                <select
-                  id="carreraPrograma"
-                  name="carreraPrograma"
-                  value={respuestas.carreraPrograma}
-                  onChange={handleChange}
-                >
-                  <option value="">Carrera o programa de estudios.</option>
-                  <option value="1">Carrera 1</option>
-                  <option value="2">Carrera 2</option>
-                  <option value="3">Carrera 3</option>
-                  <option value="4">Carrera 4</option>
-                  <option value="5">Carrera 5</option>
-                </select>
-              </div>
-              
-              <br/>
-
-         
           </Card>
           <Card className="border-dark bg-light mb-4">
             <br/>
@@ -188,6 +246,19 @@ const FormularioSeguimiento = () => {
             />
             </div>
             <br/>
+            <br/>
+            <div>
+              <input
+              type="text"
+              id="ubicacionpremio"
+              name="ubicacionpremio"
+              class="col-sm-5" 
+              placeholder="Pais en donde recibio el premio."
+              value={respuestas.ubicacionpremio}
+              onChange={handleChange}
+            />
+            </div>
+            <br/>
             <div>
               <br/>
               <textarea
@@ -204,17 +275,16 @@ const FormularioSeguimiento = () => {
           </Card>
           <Card className="border-dark bg-light mb-4">
             <br/> 
-            <h5 class="card-title">Si has obtenido alguna distinción o has sido reconocido(a) por tu destacada labor en tu campo profesional, 
-                académico o en tu comunidad, por favor, descríbelo aquí.</h5>
+            <h5 class="card-title">Tambien si queires cuantanos acerca de algun acontecimiento que haya pasado en tu vida</h5>
             <br/>
             <div>
               <input
               type="text"
-              id="premioLaboral"
-              name="premioLaboral"
+              id="acontecimientotitulo"
+              name="acontecimientotitulo"
               class="col-sm-5" 
-              placeholder="Nombre de la distinción o reconocimiento."
-              value={respuestas.premioLaboral}
+              placeholder="Acontecmiento personal."
+              value={respuestas.acontecimientotitulo}
               onChange={handleChange}
             />
             </div>
@@ -222,35 +292,25 @@ const FormularioSeguimiento = () => {
             <div>
               <input
               type="text"
-              id="anioPreLaboral"
-              name="anioPreLaboral"
+              id="fechaAcontecimiento"
+              name="fechaAcontecimiento"
               class="col-sm-5" 
-              placeholder="Año en el que fue otorgado."
-              value={respuestas.anioPreLaboral}
+              placeholder="Dinos cuando paso este acontecimiento ."
+              value={respuestas.fechaAcontecimiento}
               onChange={handleChange}
             />
             </div>
             <br/>
-            <div>
-              <input
-              type="text"
-              id="entidadPreLaboral"
-              name="entidadPreLaboral"
-              class="col-sm-5" 
-              placeholder="Institución, organización o entidad que otorgó la distinción."
-              value={respuestas.entidadPreLaboral}
-              onChange={handleChange}
-            />
-            </div>
+          
             <br/>
             <div>
               <br/>
               <textarea
-              id="descripcionPreLaboral" 
-              name="descripcionPreLaboral" 
+              id="descriocionAcontecimiento" 
+              name="descriocionAcontecimiento" 
               class="col-sm-5" 
-              placeholder="Breve descripción del prestigio o reconocimiento."
-              value={respuestas.descripcionPreLaboral}
+              placeholder="Describenos como te fue en este acontecimiento ."
+              value={respuestas.descriocionAcontecimiento}
               onChange={handleChange}
               rows="4" 
               cols="50"></textarea>
