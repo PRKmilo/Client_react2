@@ -51,8 +51,6 @@ export default function Navigation() {
                 </NavDropdown>)}
                 {valor != false && (<NavDropdown title="Estudiantes" id="menu_estudiantes-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/estudiantes'}  className="nav">Ver Estudiantes</Nav.Link></NavDropdown.Item>
-                    <NavDropdown.Item>Actualizar Estudiante</NavDropdown.Item>
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/excel'} className="nav">Subir Archivos</Nav.Link></NavDropdown.Item>
                 </NavDropdown>)}
 
                 
