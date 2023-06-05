@@ -47,7 +47,7 @@ export default function Navigation() {
 
                 {valor != false &&(<NavDropdown title="Formularios" id="menu-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/formulario profesor'} className="nav">Formulario Profesor</Nav.Link></NavDropdown.Item>
-                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Formulario Estudiante</Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link as={NavLink} to={'/Formulario estudiante'} className="nav">Encuesta egresado</Nav.Link></NavDropdown.Item>
                 </NavDropdown>)}
                 {valor != false && (<NavDropdown title="Estudiantes" id="menu_estudiantes-dropdown">
                     <NavDropdown.Item><Nav.Link as={NavLink} to={'/estudiantes'}  className="nav">Ver Estudiantes</Nav.Link></NavDropdown.Item>
