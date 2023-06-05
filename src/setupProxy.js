@@ -36,7 +36,7 @@ module.exports = function(app) {
       );
 
       app.use(
-        '/excel',
+        '/excel_graduado',
         createProxyMiddleware({
           target: 'http://161.35.9.51',
           changeOrigin: true,
